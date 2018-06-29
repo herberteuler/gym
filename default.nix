@@ -1,7 +1,7 @@
-{ stdenv, python3, python3Packages, ... }:
-with python3Packages;
+{ stdenv, python34, python34Packages, ... }:
+with python34Packages;
 buildPythonPackage rec {
   name = "gym";
   src = ./.;
-  buildInputs = [ numpy requests six pyglet ];
+  buildInputs = [ numpy requests six pyglet tensorflow tensorflow-tensorboard ];
 }
